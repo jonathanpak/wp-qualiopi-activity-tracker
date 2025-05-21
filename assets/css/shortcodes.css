@@ -1,0 +1,308 @@
+/* User Activity Logger Shortcode Styles */
+
+.ual-overview-container,
+.ual-detail-container {
+    margin: 20px 0;
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen-Sans, Ubuntu, Cantarell, "Helvetica Neue", sans-serif;
+}
+
+.ual-overview-container h2,
+.ual-detail-container h2 {
+    margin-bottom: 20px;
+    font-size: 24px;
+    color: #23282d;
+}
+
+.ual-error,
+.ual-no-data {
+    padding: 15px;
+    background-color: #f8f8f8;
+    border-left: 4px solid #dc3232;
+    margin-bottom: 20px;
+}
+
+.ual-no-data {
+    border-left-color: #00a0d2;
+}
+
+/* Overview Table */
+.ual-overview-table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-bottom: 20px;
+    border: 1px solid #e5e5e5;
+}
+
+.ual-overview-table th,
+.ual-overview-table td {
+    padding: 10px;
+    text-align: left;
+    border-bottom: 1px solid #e5e5e5;
+}
+
+.ual-overview-table th {
+    background-color: #f9f9f9;
+    font-weight: 600;
+}
+
+.ual-overview-table tr:hover {
+    background-color: #f5f5f5;
+}
+
+.ual-view-details-btn {
+    display: inline-block;
+    padding: 5px 10px;
+    background-color: #0073aa;
+    color: #fff;
+    border-radius: 3px;
+    text-decoration: none;
+    font-size: 13px;
+    transition: background 0.2s;
+}
+
+.ual-view-details-btn:hover {
+    background-color: #005d8c;
+    color: #fff;
+    text-decoration: none;
+}
+
+/* Pagination */
+.ual-pagination {
+    margin: 20px 0;
+    text-align: center;
+}
+
+.ual-pagination-link {
+    display: inline-block;
+    padding: 5px 10px;
+    margin: 0 3px;
+    border: 1px solid #ddd;
+    background: #f7f7f7;
+    color: #0073aa;
+    text-decoration: none;
+    border-radius: 3px;
+}
+
+.ual-pagination-link:hover {
+    background: #e5e5e5;
+    color: #0073aa;
+    text-decoration: none;
+}
+
+.ual-pagination-active {
+    background: #0073aa;
+    color: #fff;
+    border-color: #0073aa;
+}
+
+.ual-pagination-active:hover {
+    background: #005d8c;
+    color: #fff;
+}
+
+/* User Detail Page */
+.ual-user-summary {
+    background-color: #f9f9f9;
+    border: 1px solid #e5e5e5;
+    padding: 15px;
+    margin-bottom: 20px;
+    border-radius: 3px;
+}
+
+.ual-user-summary h2 {
+    margin-top: 0;
+    margin-bottom: 10px;
+}
+
+.ual-back-link {
+    display: inline-block;
+    margin-bottom: 15px;
+    text-decoration: none;
+    color: #0073aa;
+}
+
+.ual-back-link:hover {
+    color: #005d8c;
+    text-decoration: none;
+}
+
+.ual-back-link .dashicons {
+    vertical-align: middle;
+}
+
+/* Sessions */
+.ual-sessions-list {
+    margin-top: 20px;
+}
+
+.ual-session-item {
+    margin-bottom: 15px;
+    border: 1px solid #e5e5e5;
+    border-radius: 3px;
+    overflow: hidden;
+}
+
+.ual-session-header {
+    display: flex;
+    align-items: center;
+    padding: 10px 15px;
+    background: #f5f5f5;
+    cursor: pointer;
+    transition: background 0.2s;
+}
+
+.ual-session-header:hover {
+    background: #efefef;
+}
+
+.ual-session-icon {
+    margin-right: 15px;
+}
+
+.ual-session-info {
+    flex: 1;
+}
+
+.ual-session-info h3 {
+    margin: 0 0 5px;
+    font-size: 16px;
+    font-weight: 600;
+}
+
+.ual-session-meta {
+    display: flex;
+    flex-wrap: wrap;
+    font-size: 13px;
+    color: #666;
+}
+
+.ual-session-meta span {
+    margin-right: 15px;
+    margin-bottom: 5px;
+}
+
+.ual-session-toggle {
+    margin-left: 10px;
+}
+
+/* Activities */
+.ual-session-activities {
+    padding: 15px;
+    background: #fff;
+}
+
+.ual-no-activities {
+    font-style: italic;
+    color: #666;
+    margin: 10px 0;
+}
+
+.ual-activities-table {
+    width: 100%;
+    border-collapse: collapse;
+    border: 1px solid #e5e5e5;
+}
+
+.ual-activities-table th,
+.ual-activities-table td {
+    padding: 8px;
+    text-align: left;
+    border-bottom: 1px solid #e5e5e5;
+}
+
+.ual-activities-table th {
+    background-color: #f9f9f9;
+    font-weight: 600;
+}
+
+.ual-activities-table .dashicons {
+    vertical-align: middle;
+    color: #0073aa;
+}
+
+/* Activity Type Colors */
+.ual-activity-page_visit {
+    background-color: #f9f9f9;
+}
+
+.ual-activity-form_submission {
+    background-color: #f0f7fd;
+}
+
+.ual-activity-lesson_completed,
+.ual-activity-topic_completed,
+.ual-activity-quiz_completed,
+.ual-activity-course_completed {
+    background-color: #f0fdf0;
+}
+
+/* Responsive */
+@media screen and (max-width: 782px) {
+    .ual-session-meta {
+        flex-direction: column;
+    }
+    
+    .ual-session-meta span {
+        margin-bottom: 5px;
+    }
+    
+    .ual-overview-table,
+    .ual-overview-table thead,
+    .ual-overview-table tbody,
+    .ual-overview-table th,
+    .ual-overview-table td,
+    .ual-overview-table tr,
+    .ual-activities-table,
+    .ual-activities-table thead,
+    .ual-activities-table tbody,
+    .ual-activities-table th,
+    .ual-activities-table td,
+    .ual-activities-table tr {
+        display: block;
+    }
+    
+    .ual-overview-table thead tr,
+    .ual-activities-table thead tr {
+        position: absolute;
+        top: -9999px;
+        left: -9999px;
+    }
+    
+    .ual-overview-table tr,
+    .ual-activities-table tr {
+        border: 1px solid #e5e5e5;
+        margin-bottom: 10px;
+    }
+    
+    .ual-overview-table td,
+    .ual-activities-table td {
+        border: none;
+        position: relative;
+        padding-left: 50%;
+        border-bottom: 1px solid #f0f0f0;
+    }
+    
+    .ual-overview-table td:before,
+    .ual-activities-table td:before {
+        position: absolute;
+        top: 10px;
+        left: 10px;
+        width: 45%;
+        padding-right: 10px;
+        white-space: nowrap;
+        font-weight: bold;
+    }
+    
+    /* Labels for overview table */
+    .ual-overview-table td:nth-of-type(1):before { content: "Username"; }
+    .ual-overview-table td:nth-of-type(2):before { content: "Display Name"; }
+    .ual-overview-table td:nth-of-type(3):before { content: "Last Login"; }
+    .ual-overview-table td:nth-of-type(4):before { content: "Last Session Duration"; }
+    .ual-overview-table td:nth-of-type(5):before { content: "Total Sessions"; }
+    .ual-overview-table td:nth-of-type(6):before { content: "Actions"; }
+    
+    /* Labels for activities table */
+    .ual-activities-table td:nth-of-type(1):before { content: "Time"; }
+    .ual-activities-table td:nth-of-type(2):before { content: "Activity"; }
+    .ual-activities-table td:nth-of-type(3):before { content: "Details"; }
+}

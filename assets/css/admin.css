@@ -1,0 +1,90 @@
+/* User Activity Logger Admin Styles */
+
+.ual-overview-container,
+.ual-user-info,
+.ual-sessions-container {
+    margin: 20px 0;
+}
+
+.ual-user-info {
+    background-color: #f9f9f9;
+    border: 1px solid #e5e5e5;
+    padding: 15px;
+    border-radius: 3px;
+}
+
+.ual-no-data {
+    padding: 15px;
+    background-color: #f8f8f8;
+    border-left: 4px solid #00a0d2;
+    margin-bottom: 20px;
+}
+
+/* Sessions */
+.ual-session-box {
+    margin-bottom: 15px;
+    border: 1px solid #e5e5e5;
+    border-radius: 3px;
+    overflow: hidden;
+    background-color: #fff;
+}
+
+.ual-session-header {
+    display: flex;
+    align-items: center;
+    padding: 10px 15px;
+    background: #f5f5f5;
+}
+
+.ual-session-title {
+    flex: 1;
+}
+
+.ual-session-title h3 {
+    margin: 0 0 5px;
+    font-size: 14px;
+    font-weight: 600;
+}
+
+.ual-session-meta {
+    display: flex;
+    flex-wrap: wrap;
+    font-size: 13px;
+    color: #666;
+}
+
+.ual-session-meta span {
+    margin-right: 15px;
+    margin-bottom: 5px;
+}
+
+.ual-session-toggle button {
+    cursor: pointer;
+}
+
+/* Activities */
+.ual-session-activities {
+    padding: 15px;
+}
+
+.ual-no-activities {
+    font-style: italic;
+    color: #666;
+    margin: 10px 0;
+}
+
+/* Activity Type Colors */
+.ual-activity-page_visit td {
+    background-color: #f9f9f9;
+}
+
+.ual-activity-form_submission td {
+    background-color: #f0f7fd;
+}
+
+.ual-activity-lesson_completed td,
+.ual-activity-topic_completed td,
+.ual-activity-quiz_completed td,
+.ual-activity-course_completed td {
+    background-color: #f0fdf0;
+}
