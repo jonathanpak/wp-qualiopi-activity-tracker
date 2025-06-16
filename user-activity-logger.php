@@ -33,6 +33,7 @@ require_once UAL_PLUGIN_DIR . 'includes/integrations/class-learndash.php';
 require_once UAL_PLUGIN_DIR . 'includes/integrations/class-fluentforms.php';
 require_once UAL_PLUGIN_DIR . 'includes/shortcodes.php';
 require_once UAL_PLUGIN_DIR . 'includes/admin/class-admin.php';
+require_once UAL_PLUGIN_DIR . 'includes/class-pdf-exporter.php';
 
 /**
  * Main plugin class
@@ -89,6 +90,13 @@ class User_Activity_Logger {
     public $admin;
 
     /**
+     * PDF exporter instance
+     *
+     * @var UAL_PDF_Exporter
+     */
+    public $pdf_exporter;
+
+    /**
      * Get the singleton instance
      *
      * @return User_Activity_Logger
@@ -143,9 +151,12 @@ class User_Activity_Logger {
         if ($this->is_fluentforms_active()) {
             $this->fluentforms = new UAL_FluentForms_Integration();
         }
-        
+
         // Initialize admin
         $this->admin = new UAL_Admin();
+
+        // Initialize PDF exporter
+        $this->pdf_exporter = new UAL_PDF_Exporter();
         
         // Initialize shortcodes
         $shortcodes = new UAL_Shortcodes();

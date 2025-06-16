@@ -244,6 +244,8 @@ class UAL_Shortcodes {
         echo '<h2>' . sprintf(__('Activity Log for %s', 'user-activity-logger'), $user->display_name) . '</h2>';
         echo '<p>' . sprintf(__('Username: %s', 'user-activity-logger'), $user->user_login) . '</p>';
         echo '<p>' . sprintf(__('Email: %s', 'user-activity-logger'), $user->user_email) . '</p>';
+        $export_url = esc_url(admin_url('admin-post.php?action=ual_export_pdf&user_id=' . $user_id));
+        echo '<p><a href="' . $export_url . '" class="ual-view-details-btn">' . __('Export PDF', 'user-activity-logger') . '</a></p>';
         echo '</div>';
         
         if (empty($sessions)) {
