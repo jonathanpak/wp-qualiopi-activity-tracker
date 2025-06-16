@@ -90,6 +90,34 @@ class UAL_Admin {
             'ual_settings',
             'ual_general_settings'
         );
+
+        // Company info section
+        add_settings_section(
+            'ual_company_info',
+            __('PDF Header Information', 'user-activity-logger'),
+            array($this, 'company_info_section_callback'),
+            'ual_settings'
+        );
+
+        $fields = array(
+            'company_name' => __('Company Name', 'user-activity-logger'),
+            'representative' => __('Representative', 'user-activity-logger'),
+            'siret' => __('SIRET', 'user-activity-logger'),
+            'phone' => __('Phone', 'user-activity-logger'),
+            'email' => __('Email', 'user-activity-logger'),
+            'address' => __('Address', 'user-activity-logger'),
+            'training_name' => __('Training Name', 'user-activity-logger'),
+        );
+        foreach ($fields as $key => $label) {
+            add_settings_field(
+                'ual_company_' . $key,
+                $label,
+                array($this, 'company_field_callback'),
+                'ual_settings',
+                'ual_company_info',
+                array('key' => $key)
+            );
+        }
     }
     
     /**
@@ -142,6 +170,24 @@ class UAL_Admin {
         }
         
         echo '<p class="description">' . __('Select which user roles to track activity for. If none selected, all roles will be tracked.', 'user-activity-logger') . '</p>';
+    }
+
+    /**
+     * Company info section callback
+     */
+    public function company_info_section_callback() {
+        echo '<p>' . __('Details used in exported PDFs.', 'user-activity-logger') . '</p>';
+    }
+
+    /**
+     * Company field callback
+     */
+    public function company_field_callback($args) {
+        $key = $args['key'];
+        $settings = get_option('ual_settings', array());
+        $company = isset($settings['company']) ? $settings['company'] : array();
+        $value = isset($company[$key]) ? $company[$key] : '';
+        echo '<input type="text" class="regular-text" name="ual_settings[company][' . esc_attr($key) . ']" value="' . esc_attr($value) . '" />';
     }
     
     /**
@@ -305,6 +351,7 @@ class UAL_Admin {
             <h1>
                 <?php printf(__('User Activity for %s', 'user-activity-logger'), $user->display_name); ?>
                 <a href="<?php echo esc_url(remove_query_arg('user_id')); ?>" class="page-title-action"><?php _e('Back to Overview', 'user-activity-logger'); ?></a>
+                <a href="<?php echo esc_url(admin_url('admin-post.php?action=ual_export_pdf&user_id=' . $user_id)); ?>" class="page-title-action"><?php _e('Export PDF', 'user-activity-logger'); ?></a>
             </h1>
             
             <div class="ual-user-info">
